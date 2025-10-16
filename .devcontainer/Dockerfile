@@ -1,17 +1,37 @@
-FROM rocker/r-ver:4.5.0
+FROM rocker/r-ver:4.4.2
 
-# Instalar Python
+# Instalar dependências do sistema
 RUN apt-get update && apt-get install -y \
     python3-pip \
     python3-dev \
+    python3-venv \
+    git \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Configurar Python como padrão
-RUN ln -s /usr/bin/python3 /usr/local/bin/python
+# Criar link simbólico para python
+RUN ln -sf /usr/bin/python3 /usr/local/bin/python
 
-# Instalar radian (console R melhorado)
-RUN pip3 install radian jupyterlab notebook ipykernel
+# Instalar Jupyter e ferramentas Python (usando --break-system-packages é seguro em containers)
+RUN pip3 install --no-cache-dir --break-system-packages \
+    jupyterlab \
+    notebook \
+    ipykernel \
+    radian
 
 # Instalar pacotes R necessários
-RUN R -e "install.packages(c('IRkernel', 'languageserver'), repos='https://cloud.r-project.org')"
+RUN R -e "install.packages(c('IRkernel', 'languageserver'), repos='https://cloud.r-project.org', Ncpus=2)"
+
+# Registrar o kernel R no Jupyter
 RUN R -e "IRkernel::installspec(user = FALSE)"
+
+# Criar usuário vscode (compatível com Codespaces)
+RUN useradd -m -s /bin/bash vscode && \
+    usermod -aG sudo vscode && \
+    echo "vscode ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# Configurar diretório de trabalho
+WORKDIR /workspaces
+
+# Mudar para usuário vscode
+USER vscode

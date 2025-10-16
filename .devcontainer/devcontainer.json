@@ -1,7 +1,8 @@
 {
-  "name": "Stats Lab - Jupyter with R",
+  "name": "Stats Lab - R + Jupyter",
   "build": {
-    "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile",
+    "context": ".."
   },
   "customizations": {
     "vscode": {
@@ -15,9 +16,11 @@
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
-        "jupyter.notebookFileRoot": "${workspaceFolder}"
+        "jupyter.notebookFileRoot": "${workspaceFolder}",
+        "terminal.integrated.defaultProfile.linux": "bash"
       }
     }
   },
-  "forwardPorts": [8888]
+  "forwardPorts": [8888],
+  "remoteUser": "vscode"
 }
