@@ -12,7 +12,8 @@
         "ms-toolsai.jupyter-keymap",
         "ms-toolsai.jupyter-renderers",
         "REditorSupport.r",
-        "reditorsupport.r-lsp"
+        "reditorsupport.r-lsp",
+        "mechatroner.rainbow-csv"
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
