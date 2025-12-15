@@ -1,0 +1,98 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.12.15)  15 DEC 2025 20:41
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**fontes-publicas.tex
+(./fontes-publicas.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-22>
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count187
+\c@section=\count188
+\c@subsection=\count189
+\c@subsubsection=\count190
+\c@paragraph=\count191
+\c@subparagraph=\count192
+\c@figure=\count193
+\c@table=\count194
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\bibindent=\dimen140
+)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+
+
+! LaTeX Error: File `utf-8.def' not found.
+
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: def)
+
+Enter file name: 
+! Interruption.
+<to be read again> 
+                   }
+l.164 \endinput
+               ^^M
+? 
+(/usr/share/texlive/texmf-dist/tex/latex/tools/.tex Fileignored)
+
+Package inputenc Warning: No characters defined
+(inputenc)                by input encoding change to `utf-8'
+(inputenc)                 on input line 164.
+
+) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2024/01/07 v24.1 The Babel package
+\babel@savecnt=\count195
+\U@D=\dimen141
+\l@unhyphenated=\language9
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+\bbl@dirlevel=\count196
+
+
+! Package babel Error: Unknown option 'portuguese'. Either you misspelled it
+(babel)                or the language definition file portuguese.ldf
+(babel)                was not found.
+(babel)                There is a locale ini file for this language.
+(babel)                If it\@inpenc@undefined@{utf-8}\@inpenc@undefined@{utf-8
+}\@inpenc@undefined@{utf-8}s the main language, try adding `provide=*'
+(babel)                to the babel package options.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.4291 \ProcessOptions*
+                       
+? 
+! Interruption.
+\GenericError  ...                                
+                                                  \endgroup 
+l.4291 \ProcessOptions*
+                       
+? 
+! Emergency stop.
+\GenericError  ...                                
+                                                  \endgroup 
+l.4291 \ProcessOptions*
+                       
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 1201 strings out of 476106
+ 20498 string characters out of 5793932
+ 1922975 words of memory out of 5000000
+ 23290 multiletter control sequences out of 15000+600000
+ 558069 words of font info for 36 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 38i,0n,49p,162b,36s stack positions out of 10000i,1000n,20000p,200000b,200000s
+!  ==> Fatal error occurred, no output PDF file produced!

@@ -25,6 +25,8 @@ RUN apt-get update && apt-get install -y \
     texlive-bibtex-extra \
     texlive-latex-base \
     texlive-fonts-extra \
+    texlive-lang-portuguese \
+    texlive-latex-recommended \
     apt-transport-https \
     ca-certificates \
     dirmngr \
