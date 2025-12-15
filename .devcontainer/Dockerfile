@@ -23,6 +23,8 @@ RUN apt-get update && apt-get install -y \
     texlive-luatex \
     texlive-science \
     texlive-bibtex-extra \
+    texlive-latex-base \
+    texlive-fonts-extra \
     apt-transport-https \
     ca-certificates \
     dirmngr \
