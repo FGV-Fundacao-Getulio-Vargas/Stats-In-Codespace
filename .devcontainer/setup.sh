@@ -40,20 +40,21 @@ except Exception as e:
     print(f"[setup] ipykernel install skipped/failed: {e}")
 PY
 
-# Install LaTeX kernel for Jupyter
-echo "[setup] Installing Jupyter LaTeX kernel..."
-python3 -m pip install --no-cache-dir --break-system-packages jupyter-latex-kernel || \
-  python3 -m pip install --no-cache-dir jupyter-latex-kernel || true
+# Install Calysto LaTeX kernel for Jupyter (functional LaTeX kernel)
+echo "[setup] Installing Calysto LaTeX kernel..."
+python3 -m pip install --no-cache-dir --break-system-packages calysto-latex 2>/dev/null || \
+  python3 -m pip install --no-cache-dir calysto-latex 2>/dev/null || \
+  echo "[setup] Note: calysto-latex install skipped (optional; LaTeX compilation available via %%latex magic in notebooks)"
 
 python3 - <<'PY'
 import subprocess, sys
 try:
-    # Register LaTeX kernel with Jupyter
+    # Register LaTeX kernel with Jupyter if available
     subprocess.run([
-        sys.executable, "-m", "latex_kernel", "install", "--user"
+        sys.executable, "-m", "calysto_latex", "install", "--user"
     ], check=False)
 except Exception as e:
-    print(f"[setup] LaTeX kernel install skipped/failed: {e}")
+    pass
 PY
 
 # R setup: per-user library path and selective package install
