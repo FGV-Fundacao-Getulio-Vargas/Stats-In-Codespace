@@ -40,6 +40,22 @@ except Exception as e:
     print(f"[setup] ipykernel install skipped/failed: {e}")
 PY
 
+# Install LaTeX kernel for Jupyter
+echo "[setup] Installing Jupyter LaTeX kernel..."
+python3 -m pip install --no-cache-dir --break-system-packages jupyter-latex-kernel || \
+  python3 -m pip install --no-cache-dir jupyter-latex-kernel || true
+
+python3 - <<'PY'
+import subprocess, sys
+try:
+    # Register LaTeX kernel with Jupyter
+    subprocess.run([
+        sys.executable, "-m", "latex_kernel", "install", "--user"
+    ], check=False)
+except Exception as e:
+    print(f"[setup] LaTeX kernel install skipped/failed: {e}")
+PY
+
 # R setup: per-user library path and selective package install
 echo "[setup] Configuring R user library and installing common packages (idempotent)..."
 mkdir -p "$HOME/R/library"
