@@ -19,6 +19,10 @@ RUN apt-get update && apt-get install -y \
     texlive-xetex \
     texlive-fonts-recommended \
     texlive-plain-generic \
+    texlive-latex-extra \
+    texlive-luatex \
+    texlive-science \
+    texlive-bibtex-extra \
     apt-transport-https \
     ca-certificates \
     dirmngr \
